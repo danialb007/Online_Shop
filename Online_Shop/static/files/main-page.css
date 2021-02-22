@@ -1,0 +1,46 @@
+.main-div{
+    box-shadow: 0 0 3px 0.1px #643173;
+    background-color: #fcfafa;
+    margin: auto;
+    border-radius: 10px;
+    width: 95%;
+    height: 400px;
+    display: flex;
+    padding: 10px;
+    margin-top: 1%;
+}
+.img{
+    cursor: pointer;
+    padding: 2%;
+    color: #fcfafa;
+    background-color: #000;
+    margin: auto;
+    margin-bottom: 10%;
+    margin-top: 5px;
+    height: 50%;
+    width: 90%;
+    border-radius: 10px;
+    line-height: 200%;
+}
+.price{
+    font-size: 90%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+}
+.product{
+    transition: box-shadow 0.1s ease-in-out, transform 0.1s ease-in-out;
+    font-size: large;
+    padding: 0.2%;
+    margin: auto;
+    text-align: center;
+    border-radius: 10px;
+    width: 15%;
+    height: 350px;
+    position: relative;
+}
+.product:hover{
+    transform: scale(1.05,1.05);
+    box-shadow: 0 0 3px 1px #643173;
+}

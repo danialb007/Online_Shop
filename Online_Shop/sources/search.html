@@ -1,0 +1,21 @@
+{% extends 'Base.html' %}
+{% block style %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'files/search-page.css' %}">
+{% endblock %}
+{% block body %}
+    <br>
+    <div class="search-div">
+        {% if not results %}
+        <h2>Nothing found</h2>
+        {% else %}
+            {% for result in results %}
+            <div class="product">
+                <a href="/product/{{result.id}}"><p class="img">Product's image</p></a>
+                <a style="font-size: medium;" href="/product/{{result.id}}">{{result.name}}</a>
+                <p class="price">{{result.price}}</p>
+            </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}

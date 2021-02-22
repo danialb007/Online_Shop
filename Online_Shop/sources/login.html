@@ -1,0 +1,25 @@
+{% extends 'Base.html' %}
+{% block style %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'files/login-page.css' %}">
+{% endblock %}
+{% block body %}
+    <div class="title-div">
+        <br>
+        <h5 style="text-align: center;">Login</h5>
+    </div>
+    <div class="login-div">
+        <form method="POST">
+            {% csrf_token %}
+            <h5>Username:</h5>
+            <input required name="username" type="text">
+            <h5>Password:</h5>
+            <input required name="password" type="password"><br>
+            {% if result %}
+            <p>{{result}}</p>
+            {% endif %}
+            <button type="submit">Login</button>
+            <a href="/signup"><button type="button">Sign up</button></a>
+        </form>
+    </div>
+{% endblock %}

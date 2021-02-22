@@ -1,0 +1,22 @@
+{% extends 'Base.html' %}
+{% block style %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'files/main-page.css' %}">
+{% endblock %}
+{% block body %}
+    <div class="title-div">
+        <br>
+        <h5 style="text-align: center;">Today offers</h5>
+    </div>
+    {% for n in products %}
+    <div class="main-div">
+        {% for product in n %}
+        <div class="product">
+            <a href="/product/{{product.id}}"><p class="img">Product's image</p></a>
+            <a href="/product/{{product.id}}">{{product.name}}</a>
+            <p class="price">{{product.price}}</p>
+        </div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+{% endblock %}

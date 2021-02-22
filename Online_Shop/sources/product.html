@@ -1,0 +1,33 @@
+{% extends 'Base.html' %}
+{% block style %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'files/product-page.css' %}">
+{% endblock %}
+{% block body %}
+    <br>
+    <div class="product-page-div">
+        <div class="product-contents-div">
+            <div class="add-to-cart">
+                <a href="?product={{product.pk}}">
+                    <button>Add to cart</button>
+                </a><br>
+                {% if added %}
+                <p class="add-to-cart">Added to cart</p>
+                {% endif %}
+            </div>
+            <h3>{{product.name}}</h3>
+            <h4>Price: {{product.price}}</h4>
+            <div class="product-disc-div">
+                <h5>Discription:</h5>
+                <p>{{product.discription}}</p>
+            </div>
+        </div>
+        <div class="product-img-div">
+            <p>Product pictures</p>
+        </div>
+    </div>
+    <div class="product-reviews-div">
+        <h5>Comments and reviews:</h5>
+        <p>No reviews</p>
+    </div>
+{% endblock %}
