@@ -4,11 +4,11 @@
     background-color: #fcfafa;
     display: flex;
     flex-wrap: wrap;
+    justify-content: right;
     width: 80%;
     border-radius: 10px;
     padding: 10px;
     min-height: 400px;
-    justify-content: space-evenly;
     box-shadow: 0 0 3px 0.1px #643173;
 }
 .img{
@@ -16,9 +16,7 @@
     padding: 2%;
     color: #fcfafa;
     background-color: #000;
-    margin: auto;
-    margin-bottom: 10%;
-    margin-top: 5px;
+    margin: 2% auto;
     height: 50%;
     width: 90%;
     border-radius: 10px;
@@ -34,11 +32,11 @@
 .product{
     transition: box-shadow 0.1s ease-in-out, transform 0.1s ease-in-out;
     font-size: large;
-    padding: 0.2%;
-    margin-top: 2%;
+    margin: 1% 1%;
     text-align: center;
     border-radius: 10px;
-    width: 18%;
+    width: 20%;
+    min-width: 200px;
     height: 350px;
     position: relative;
 }

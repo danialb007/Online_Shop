@@ -1,51 +1,25 @@
 .login-div{
     box-shadow: 0 0 3px 0.1px #643173;
     background-color: #fcfafa;
-    margin: auto;
+    margin: 1% auto;
     border-radius: 10px;
-    width: 30%;
-    padding: 10px;
-    margin-top: 1%;
+    width: 40%;
+    padding: 1%;
 }
 .login-div *{
-    margin-bottom: 10%;
     width: 100%;
 }
 .login-div button{
     font-size: x-large;
-    width: 44%;
-    margin-right: 2.5%;
-    margin-left: 2.5%;
-    margin-bottom: 0;
+}
+a button{
+    float: right;
 }
 .login-div p{
     background-color: #ff808080;
     border-radius: 5px;
     text-align: center;
 }
-
-.signup-div{
-    box-shadow: 0 0 3px 0.1px #643173;
-    background-color: #fcfafa;
-    margin: auto;
-    border-radius: 10px;
-    width: 40%;
-    padding: 10px;
-    margin-top: 1%;
-}
-.signup-div *{
+h5 + input{
     margin-bottom: 10%;
-    width: 100%;
-}
-.signup-div button{
-    font-size: x-large;
-    width: 44%;
-    margin-right: 2.5%;
-    margin-left: 2.5%;
-    margin-bottom: 0;
-}
-.signup-div p{
-    background-color: #ff808080;
-    border-radius: 5px;
-    text-align: center;
 }

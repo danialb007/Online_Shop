@@ -16,9 +16,9 @@
         <a href="/"><button>Home</button></a>
         <a href="/shoppinglist"><button>Shopping list</button></a>
         {% if User %}
-        <a href="/logout"><button>Logout of {{User.username}}</button></a>
+        <a href="/profile"><button>{{User.username}}</button></a>
         {% else %}
-        <a href="/login"><button>Login | Signup</button></a>
+        <a href="/login"><button>Login</button></a>
         {% endif %}
         <input placeholder="search..." form="searchform" name="q" type="text">
     </div>

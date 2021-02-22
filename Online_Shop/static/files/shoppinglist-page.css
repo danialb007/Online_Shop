@@ -16,19 +16,33 @@
     text-align: center;
 }
 .table-div{
+    font-size: clamp(80%,1.5vw,1.5vw);
     padding: 1%;
     display: flex;
     flex-wrap: wrap;
 }
 .table-div * {
+    margin: 0 0;
+    padding: 1% 0;
     min-height: 40px;
-    font-size: 95%;
+}
+.table-div > *{
+    border-top: 2px solid #643173;
+}
+.table-div .hdr{
+    border-top: none;
 }
 .table-div h3{
-    font-size: 110%;
+    font-weight: 600;
+    font-size: inherit;
+}
+.table-div input{
+    text-align: center;
+    max-width: 100%;
 }
 .name{
     display: flex;
+    align-items: center;
     flex-basis: 50%;
     padding-right: 1%;
     justify-content: space-between;
@@ -42,18 +56,23 @@
     padding-right: 2%;
 }
 .price{
+    display: flex;
+    align-items: center;
+    flex-basis: 30%;
+    justify-content: center;
     border-right: 1px solid #643173;
     border-left: 1px solid #643173;
-    text-align: center;
-    flex-basis: 30%;
 }
 .count{
-    width: 15%;
-    height: min-content;
+    display: flex;
+    align-items: center;
     flex-basis: 20%;
-    text-align: center;
+    justify-content: center;
+    max-width: 20%;
 }
-
+.table-div button{
+    font-weight: 600;
+}
 .table-div input:hover,.table-div input:focus,.table-div input{
     border: none;
 }

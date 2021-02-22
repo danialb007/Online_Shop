@@ -14,13 +14,13 @@
         {% else %}
         <div class="table-div">
             <form method="POST" id="count-form">{% csrf_token %}</form>
-            <h3 class="name">Name</h3>
-            <h3 class="price">Price</h3>
-            <h3 class="count">Count</h3>
+            <h3 class="name hdr">Name</h3>
+            <h3 class="price hdr">Price</h3>
+            <h3 class="count hdr">Count</h3>
             {% for item,price,count in items %}
             <p class="name"><span>{{ item.name }}</span><a href="?remove={{item.id}}"><button>Del</button></a></p>
             <p class="price">{{ price }}</p>
-            <input form="count-form" name="c_{{item.id}}" value="{{count}}" class="count" type="number">
+            <div class="count"><input form="count-form" name="c_{{item.id}}" value="{{count}}" type="number"></div>
             {% endfor %}
             <h3 class="name">Total price</h3>
             <h3 class="price">{{ total }}</h3>
@@ -29,7 +29,7 @@
     </div>
     <div style="border: none;" class="title-div">
         <br>
-    <a><button>Check out</button></a>
+    <a href="#"><button>Check out</button></a>
     </div>
     {% endif %}
 {% endblock %}
