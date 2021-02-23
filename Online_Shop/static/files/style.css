@@ -64,7 +64,7 @@ button:hover,button:focus{
     margin: auto;
     display: flex;
     position: sticky;
-    overflow: auto;
+    overflow: hidden;
     justify-content: space-between;
     background-color: #fcfafa;
     border-bottom: 3px solid #643173;
@@ -81,7 +81,7 @@ button:hover,button:focus{
     width: 30%;
 }
 .title-div{
-    margin: auto;
+    margin: 2% auto;
     width: max-content;
     border-bottom: 3px solid #643173;
 }

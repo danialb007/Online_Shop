@@ -43,7 +43,7 @@
 .add-to-cart{
     float: right;
     height: 30px;
-    width: 45%;
+    width: max-content;
     text-align: right;
 }
 .add-to-cart p{

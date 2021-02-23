@@ -5,7 +5,6 @@
 {% endblock %}
 {% block body %}
     <div class="title-div">
-        <br>
         <h5 style="text-align: center;">Shopping list</h5>
     </div>
     <div class="shoppinglist-div">
@@ -18,17 +17,17 @@
             <h3 class="price hdr">Price</h3>
             <h3 class="count hdr">Count</h3>
             {% for item,price,count in items %}
-            <p class="name"><span>{{ item.name }}</span><a href="?remove={{item.id}}"><button>Del</button></a></p>
+            <p class="name"><span>{{ item.name }}</span><a href="?remove={{item.id}}"><button>x</button></a></p>
             <p class="price">{{ price }}</p>
             <div class="count"><input form="count-form" name="c_{{item.id}}" value="{{count}}" type="number"></div>
             {% endfor %}
             <h3 class="name">Total price</h3>
-            <h3 class="price">{{ total }}</h3>
-            <button form="count-form" type="submit" class="count">Submit</button>
+            <h3 class="price">{{ totalp }}</h3>
+            <h3 class="count">{{ totalc }}</h3>
+            <button type="submit" form="count-form" hidden></button>
         </div>
     </div>
     <div style="border: none;" class="title-div">
-        <br>
     <a href="#"><button>Check out</button></a>
     </div>
     {% endif %}

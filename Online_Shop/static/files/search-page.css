@@ -11,6 +11,10 @@
     min-height: 400px;
     box-shadow: 0 0 3px 0.1px #643173;
 }
+.search-div h2{
+    margin: auto;
+    color: #ff8080;
+}
 .img{
     cursor: pointer;
     padding: 2%;

@@ -5,17 +5,17 @@ from . import utils
 
 def Login(request):
     user = utils.CurrentUser(request)
+    next_url = utils.Redirect(request)
     result = ''
-    if utils.Redirect(request):
+    if next_url:
         result = 'Login first'
     if request.method == 'POST':
         result = utils.Login(request)
-        if not result:
-            if utils.Redirect(request):
-                return HttpResponseRedirect(utils.Redirect(request))
-            return HttpResponseRedirect('/')
+        if not result and next_url:
+            return HttpResponseRedirect(next_url)
+        return HttpResponseRedirect('/profile')
     context = {
-        'User': user,
+        'User':user,
         'result':result,
     }
     return render(request, 'login.html', context)
@@ -33,13 +33,31 @@ def Index(request):
     }
     return render(request,'index.html', context)
 
+@utils.Login_Requierd
+def Profile(request):
+    user = utils.CurrentUser(request)
+    result = ''
+    if request.method == 'POST':
+        address = request.POST.get('address')
+        phone_number = request.POST.get('phone_number')
+        user.phone_number = phone_number
+        user.address = address
+        user.save()
+    context = {
+        'User': user,
+        'result': result,
+    }
+    return render(request, 'profile.html', context)
+
 def Product(request,pk=None):
     user = utils.CurrentUser(request)
     product = Products.objects.get(pk=pk)
     added = False
     if request.GET.get('product'):
         utils.AddProduct(request)
-        added = True
+    if ShoppingList.objects.filter(user=user):
+        if product in ShoppingList.objects.get(user=user).product.all():
+            added = True
     context = {
         'User': user,
         'product':product,
@@ -53,7 +71,6 @@ def Search(request):
     results = utils.Search(query)
     if not query:
         return HttpResponseRedirect('/')
-
     context = {
         'User': user,
         'results':results
@@ -64,7 +81,6 @@ def Signup(request):
     result = ''
     if request.method == 'POST':
         result = utils.CreateAccout(request)
-        
     context = {
         'result':result,
     }
@@ -79,27 +95,26 @@ def Logout(request):
     Ips.objects.filter(ip=ip).delete()
     return HttpResponseRedirect('/')
 
+@utils.Login_Requierd
 def ShoppingListView(request):
     user = utils.CurrentUser(request)
-    if not user:
-        return HttpResponseRedirect('/login?next=shoppinglist')
     try:
         items = ShoppingList.objects.get(user=user).product.all()
     except ShoppingList.DoesNotExist:
-        items = None
+        items = []
     if request.GET.get('remove'):
         utils.RemoveProduct(request)
-    items = ShoppingList.objects.get(user=user).product.all()
     prices = [x.price for x in items]
-    counts = ['1' for x in prices]
+    counts = [1 for x in prices]
     if request.method == 'POST':
         counts = utils.ChangeCount(request)
-        prices = [int(x) * int(y) for x,y in zip(prices,counts)]
+        prices = [x * y for x,y in zip(prices,counts)]
     items = list(zip(items, prices, counts))
-    total = sum(prices)
+    totalp, totalc = sum(prices),sum(counts)
     context = {
         'User':user,
         'items':items,
-        'total':total,
+        'totalp':totalp,
+        'totalc':totalc,
     }
     return render(request, 'shoppinglist.html', context)

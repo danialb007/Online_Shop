@@ -1,0 +1,26 @@
+{% extends 'Base.html' %}
+{% block style %}
+    {% load static %}
+        <link rel="stylesheet" href="{% static 'files/profile-page.css' %}">
+{% endblock %}
+{% block body %}
+    <div class="title-div">
+        <h5 style="text-align: center;">Welcome {{User.first_name | title}}</h5>
+    </div>
+    <form method="POST" id="user-info-form">{% csrf_token %}</form>
+    <div class="profile-div">
+        <div class="info-div">
+            <h5>Address:</h5>
+            <textarea name="address" form="user-info-form">{{User.address}}</textarea>
+            <br>
+            <h5>Phone number:</h5>
+            <input name="phone_number" type="number" form="user-info-form" value="{{User.phone_number}}">
+            <br>
+            <div style="text-align: center;"><button type="submit">Update</button></div>
+        </div>
+        <div class="orders-div">
+            <h5>No orders</h5>
+        </div>
+    </div>
+    <div style="text-align: center; margin: 0;"><a href="/logout"><button>Logout</button></a></div>
+{% endblock %}

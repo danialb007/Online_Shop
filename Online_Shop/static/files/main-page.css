@@ -1,13 +1,11 @@
 .main-div{
     box-shadow: 0 0 3px 0.1px #643173;
     background-color: #fcfafa;
-    margin: auto;
+    margin: 1% auto;
     border-radius: 10px;
     width: 95%;
     display: flex;
     padding: 3%;
-    margin-top: 2%;
-    margin-bottom: 3%;
     overflow: auto;
     justify-content: center;
 }

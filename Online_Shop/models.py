@@ -9,12 +9,13 @@ class Products(models.Model):
 
 class Users(models.Model):
     username = models.CharField(max_length=16)
-    password = models.CharField(max_length=150)
+    password = models.CharField(max_length=80)
     email = models.EmailField()
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)
     logged_in = models.BooleanField(default=False)
-    address = models.TextField(max_length=200)
+    address = models.TextField(max_length=300)
+    phone_number = models.CharField(max_length=16, default='')
 
 class Ips(models.Model):
     user = models.ForeignKey(Users, on_delete=models.CASCADE, default='')

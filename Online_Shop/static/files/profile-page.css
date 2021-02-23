@@ -1,0 +1,38 @@
+.profile-div{
+    width: 95%;
+    display: flex;
+    background-color: #fcfafa;
+    box-shadow: 0 0 3px 0.1px #643173;
+    margin: auto;
+    border-radius: 10px;
+    padding: 1%;
+}
+.info-div{
+    width: 70%;
+}
+.info-div *{
+    width: 90%;
+}
+.info-div input, .info-div textarea{
+    margin-bottom: 5%;
+}
+.orders-div{
+    width: 30%;
+    margin-left: auto;
+    padding: 0 1%;
+    border-left: 1px solid #643173;
+}
+textarea{
+    transition: border 0.1s ease-in-out;
+    border: 2px solid #64317380;
+    resize: vertical;
+    color: #643173;
+    padding: 0 1%;
+    background-color: #fcfafa;
+}
+textarea:hover{
+    border: 2px solid #643173;
+}
+input{
+    height: max-content;
+}

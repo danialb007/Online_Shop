@@ -9,11 +9,12 @@
         <div class="product-contents-div">
             <div class="add-to-cart">
                 <a href="?product={{product.pk}}">
+                    {% if added %}
+                    <p class="add-to-cart">In cart</p>
+                    {% else %}
                     <button>Add to cart</button>
+                    {% endif %}
                 </a><br>
-                {% if added %}
-                <p class="add-to-cart">Added to cart</p>
-                {% endif %}
             </div>
             <h3>{{product.name}}</h3>
             <h4>Price: {{product.price}}</h4>

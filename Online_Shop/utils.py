@@ -1,7 +1,8 @@
 from .models import Products, Users, Ips, ShoppingList
 from hashlib import sha256
+from django.http.response import HttpResponseRedirect
 
-def Login(request):
+def Login(request, redirect_url=None):
     result = ''
     ip = request.META['REMOTE_ADDR']
     username = request.POST.get('username')
@@ -24,6 +25,21 @@ def Login(request):
         result = 'User doesn\'t exist'
     return result
 
+def Login_Requierd(func):
+    def wrapper(request,*args, **kwargs):
+        user = CurrentUser(request)
+        next_url = request.META['PATH_INFO']
+        if not user:
+            return HttpResponseRedirect(f'/login?next={next_url}')
+        return func(request)
+    return wrapper
+
+def Redirect(request):
+    next_url = request.GET.get('next')
+    if next_url:
+        return next_url
+    return None
+
 def Split(List, size):
     newList = []
     while len(List) > size:
@@ -44,6 +60,7 @@ def CreateAccout(request):
     first_name = request.POST.get('first_name')
     last_name = request.POST.get('last_name')
     address = request.POST.get('address')
+    phone_number = request.POST.get('phone_number')
     email_check = Users.objects.filter(email=email)
     username_check = Users.objects.filter(username=username)
     if email_check:
@@ -52,15 +69,16 @@ def CreateAccout(request):
     elif username_check:
         result = 'Username already exists'
         return result
-
     password = sha256(password.encode()).hexdigest()
+
     Users.objects.create(
     username=username,
     password=password,
     email=email,
     first_name=first_name,
     last_name=last_name,
-    address=address
+    address=address,
+    phone_number=phone_number
     )
     result = 'Account created'
     return result
@@ -71,14 +89,6 @@ def CurrentUser(request):
     if ip:
         user = ip[0].user
         return user
-    else:
-        return None
-
-def Redirect(request):
-    redirect_url = request.GET.get('next')
-    if redirect_url:
-        redirect_url = '/' + redirect_url
-        return redirect_url
     else:
         return None
 
@@ -108,6 +118,6 @@ def ChangeCount(request):
     counts = []
     for k,v in items.items():
         if k.startswith('c_'):
-            counts.append(v)
+            counts.append(int(v))
     return counts
 

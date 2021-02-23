@@ -23,6 +23,7 @@ urlpatterns = [
     path('search/', views.Search),
     path('product/<int:pk>', views.Product),
     path('login/', views.Login),
+    path('profile/', views.Profile),
     path('logout/', views.Logout),
     path('signup/', views.Signup),
     path('shoppinglist/', views.ShoppingListView),
