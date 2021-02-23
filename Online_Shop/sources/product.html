@@ -8,13 +8,13 @@
     <div class="product-page-div">
         <div class="product-contents-div">
             <div class="add-to-cart">
-                <a href="?product={{product.pk}}">
+                <a href="?product={{product.pk}}&next={{product.pk}}">
                     {% if added %}
-                    <p class="add-to-cart">In cart</p>
+                </a><p class="add-to-cart">In cart</p>
                     {% else %}
-                    <button>Add to cart</button>
+                    <button>Add to cart</button></a>
                     {% endif %}
-                </a><br>
+                <br>
             </div>
             <h3>{{product.name}}</h3>
             <h4>Price: {{product.price}}</h4>

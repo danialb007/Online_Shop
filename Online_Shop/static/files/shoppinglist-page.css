@@ -1,22 +1,20 @@
 .shoppinglist-div{
     background-color: #fcfafa;
-    border-radius: 10px;
     width: 95%;
     margin: 1% auto;
     box-shadow: 0 0 3px 0.1px #643173;
-    min-height: 300px;
+    min-height: 100px;
     display: table;
+    padding: 1%;
 }
 .shoppinglist-div h4{
     display: table-cell;
     vertical-align: middle;
     background-color: #ff808080;
-    border-radius: 10px;
     text-align: center;
 }
 .table-div{
-    font-size: clamp(60%,1.5vw,1.5vw);
-    padding: 1%;
+    font-size: clamp(65%,1.5vw,1.5vw);
     display: flex;
     flex-wrap: wrap;
 }

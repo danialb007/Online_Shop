@@ -2,12 +2,10 @@
     box-shadow: 0 0 3px 0.1px #643173;
     background-color: #fcfafa;
     margin: 1% auto;
-    border-radius: 10px;
     width: 95%;
     display: flex;
-    padding: 3%;
+    padding: 1% 0;
     overflow: auto;
-    justify-content: center;
 }
 .img{
     cursor: pointer;
@@ -19,7 +17,6 @@
     margin-top: 5px;
     height: 50%;
     width: 90%;
-    border-radius: 10px;
 }
 .price{
     font-size: 90%;
@@ -34,9 +31,8 @@
     padding: 0.2%;
     text-align: center;
     margin: 0 1%;
-    width: 20%;
+    flex: 0 0 20%;
     min-width: 200px;
-    border-radius: 10px;
     height: 350px;
     position: relative;
 }

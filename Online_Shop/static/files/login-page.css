@@ -2,7 +2,6 @@
     box-shadow: 0 0 3px 0.1px #643173;
     background-color: #fcfafa;
     margin: 1% auto;
-    border-radius: 10px;
     width: 40%;
     padding: 1%;
 }
@@ -17,7 +16,6 @@ a button{
 }
 .login-div p{
     background-color: #ff808080;
-    border-radius: 5px;
     text-align: center;
 }
 h5 + input{

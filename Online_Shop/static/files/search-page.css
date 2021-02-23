@@ -6,7 +6,6 @@
     flex-wrap: wrap;
     justify-content: right;
     width: 80%;
-    border-radius: 10px;
     padding: 10px;
     min-height: 400px;
     box-shadow: 0 0 3px 0.1px #643173;
@@ -23,7 +22,6 @@
     margin: 2% auto;
     height: 50%;
     width: 90%;
-    border-radius: 10px;
     line-height: 200%;
 }
 .price{
@@ -38,7 +36,6 @@
     font-size: large;
     margin: 1% 1%;
     text-align: center;
-    border-radius: 10px;
     width: 20%;
     min-width: 200px;
     height: 350px;

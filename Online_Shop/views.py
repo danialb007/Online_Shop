@@ -13,7 +13,8 @@ def Login(request):
         result = utils.Login(request)
         if not result and next_url:
             return HttpResponseRedirect(next_url)
-        return HttpResponseRedirect('/profile')
+        if not result:
+            return HttpResponseRedirect('/profile')
     context = {
         'User':user,
         'result':result,
@@ -51,10 +52,12 @@ def Profile(request):
 
 def Product(request,pk=None):
     user = utils.CurrentUser(request)
+    next_url = utils.Redirect(request)
     product = Products.objects.get(pk=pk)
     added = False
     if request.GET.get('product'):
         utils.AddProduct(request)
+        return HttpResponseRedirect(next_url)
     if ShoppingList.objects.filter(user=user):
         if product in ShoppingList.objects.get(user=user).product.all():
             added = True

@@ -4,13 +4,13 @@
     background-color: #fcfafa;
     box-shadow: 0 0 3px 0.1px #643173;
     margin: auto;
-    border-radius: 10px;
     padding: 1%;
 }
 .info-div{
     width: 70%;
 }
 .info-div *{
+    font-size: 1rem;
     width: 90%;
 }
 .info-div input, .info-div textarea{

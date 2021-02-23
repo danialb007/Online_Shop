@@ -3,7 +3,7 @@ from hashlib import sha256
 from django.http.response import HttpResponseRedirect
 
 def Login(request, redirect_url=None):
-    result = ''
+    result = 'Incorrect username or password'
     ip = request.META['REMOTE_ADDR']
     username = request.POST.get('username')
     password = request.POST.get('password')
@@ -19,10 +19,9 @@ def Login(request, redirect_url=None):
             else:
                 Ips.objects.create(user=user_check,ip=ip)
             user_check.save()
-        else:
-            result = 'Incorrect username or password'
+            result = ''
     except:
-        result = 'User doesn\'t exist'
+        pass
     return result
 
 def Login_Requierd(func):

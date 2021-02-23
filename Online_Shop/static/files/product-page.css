@@ -6,7 +6,6 @@
 }
 .product-contents-div{
     padding: 1%;
-    border-radius: 10px;
     height: 500px;
     box-shadow: 0 0 3px 0.1px #643173;
     background-color: #fcfafa;
@@ -17,7 +16,6 @@
     color: #fcfafa;
     width: 49%;
     height: 500px;
-    border-radius: 10px;
     margin-bottom: 2%;
 }
 .product-disc-div{
@@ -25,7 +23,6 @@
     margin-top: 1%;
     background-color: #643173;
     color: #fcfafa;
-    border-radius: 10px;
     max-height: 400px;
     overflow: auto;
     overflow-wrap: break-word;
@@ -37,7 +34,6 @@
     padding: 1%;
     background-color: #643173;
     color: #fcfafa;
-    border-radius: 10px;
     height: max-content;
 }
 .add-to-cart{
@@ -49,5 +45,5 @@
 .add-to-cart p{
     margin-top: 2%;
     padding-right: 2%;
-    background-color: #ff808080;
+    color: #ff8080;
 }
