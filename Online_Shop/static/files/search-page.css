@@ -1,17 +1,29 @@
+.search-page-div{
+    display: flex;
+    width: 95%;
+    margin: auto;
+}
+.search-filter-div{
+    background-color: #fcfafa;
+    width: 30%;
+    padding: 1%;
+    box-shadow: 0 0 3px 0.1px #643173;
+    display: table;
+}
 .search-div{
     margin-left: auto;
-    margin-right: 2.5%;
     background-color: #fcfafa;
     display: flex;
     flex-wrap: wrap;
-    justify-content: right;
-    width: 80%;
-    padding: 10px;
+    flex-direction: row;
+    width: 68%;
+    padding: 1%;
     min-height: 400px;
     box-shadow: 0 0 3px 0.1px #643173;
 }
-.search-div h2{
+.search-page-div h2{
     margin: auto;
+    font-weight: 600;
     color: #ff8080;
 }
 .img{

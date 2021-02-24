@@ -6,9 +6,12 @@
 {% block body %}
     <br>
     <div class="product-page-div">
+        <div class="product-img-div">
+            <p>Product pictures</p>
+        </div>
         <div class="product-contents-div">
             <div class="add-to-cart">
-                <a href="?product={{product.pk}}&next={{product.pk}}">
+                <a href="?product={{product.pk}}">
                     {% if added %}
                 </a><p class="add-to-cart">In cart</p>
                     {% else %}
@@ -22,9 +25,6 @@
                 <h5>Discription:</h5>
                 <p>{{product.discription}}</p>
             </div>
-        </div>
-        <div class="product-img-div">
-            <p>Product pictures</p>
         </div>
     </div>
     <div class="product-reviews-div">

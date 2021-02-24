@@ -29,8 +29,8 @@ def Login_Requierd(func):
         user = CurrentUser(request)
         next_url = request.META['PATH_INFO']
         if not user:
-            return HttpResponseRedirect(f'/login?next={next_url}')
-        return func(request)
+            return HttpResponseRedirect(f'/login/?next={next_url}')
+        return func(request, *args, **kwargs)
     return wrapper
 
 def Redirect(request):
@@ -48,8 +48,15 @@ def Split(List, size):
     newList.append(List)
     return newList
 
-def Search(query:str):
+def Search(query, request, filt=False):
     result = Products.objects.filter(name__icontains=query)
+    if filt:
+        for order in request.POST:
+            if order == 'csrfmiddlewaretoken':
+                continue
+            result = result.order_by(order)
+            if request.POST[order] == 'h':
+                result = result.reverse()
     return result
 
 def CreateAccout(request):
@@ -91,18 +98,19 @@ def CurrentUser(request):
     else:
         return None
 
+@Login_Requierd
 def AddProduct(request):
     user = CurrentUser(request)
-    product = request.GET.get('product')
+    pk = request.GET.get('product')
     if not ShoppingList.objects.filter(user=user):
-        product = Products.objects.filter(pk=product)
+        product = Products.objects.filter(pk=pk)
         shopping_item = ShoppingList.objects.create(user=user)
         shopping_item.product.set(product)
     else:
-        product = Products.objects.get(pk=product)
+        product = Products.objects.get(pk=pk)
         shopping_item = ShoppingList.objects.filter(user=user)[0]
         shopping_item.product.add(product)
-    return
+    return HttpResponseRedirect(f'/product/{pk}')
 
 def RemoveProduct(request):
     user = CurrentUser(request)

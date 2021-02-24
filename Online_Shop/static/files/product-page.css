@@ -1,22 +1,21 @@
 .product-page-div{
-    display: flex;
     margin: auto;
     width: 95%;
-    justify-content: space-between;
 }
 .product-contents-div{
+    margin-bottom: 2%;
     padding: 1%;
     height: 500px;
     box-shadow: 0 0 3px 0.1px #643173;
     background-color: #fcfafa;
-    width: 49%;
+    min-width: 300px;
 }
 .product-img-div{
+    margin-right: auto;
+    margin-bottom: 2%;
     background-color: #000;
     color: #fcfafa;
-    width: 49%;
-    height: 500px;
-    margin-bottom: 2%;
+    height: 400px;
 }
 .product-disc-div{
     padding: 1%;
@@ -39,7 +38,8 @@
 .add-to-cart{
     float: right;
     height: 30px;
-    width: max-content;
+    font-weight: 600;
+    min-width: 115px;
     text-align: right;
 }
 .add-to-cart p{

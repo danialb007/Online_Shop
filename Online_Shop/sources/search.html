@@ -5,10 +5,19 @@
 {% endblock %}
 {% block body %}
     <br>
-    <div class="search-div">
+    <div class="search-page-div">
         {% if not results %}
         <h2>Nothing found</h2>
         {% else %}
+        <div class="search-filter-div">
+            <form method="POST" id="filter-form">{% csrf_token %}</form>
+            <p>Price: ascending <input name="price" form="filter-form" value="h" type="radio">
+            decending <input name="price" form="filter-form" value="l" type="radio"></p>
+            <p>Name: ascending <input name="name" form="filter-form" value="h" type="radio">
+            decending <input name="name" form="filter-form" value="l" type="radio"></p>
+            <button type="submit" form="filter-form">Apply changes</button>
+        </div>
+        <div class="search-div">
             {% for result in results %}
             <div class="product">
                 <a href="/product/{{result.id}}"><p class="img">Product's image</p></a>
@@ -16,6 +25,7 @@
                 <p class="price">{{result.price}}</p>
             </div>
             {% endfor %}
+        </div>
         {% endif %}
     </div>
 {% endblock %}

@@ -43,18 +43,18 @@ input:hover,input:focus{
     border-bottom: 2px solid #643173;
 }
 button{
-    transition: border-bottom 0.2s ease-in-out;
-    max-width: max-content;
-    width: max-content;
+    transition: border-bottom 0.1s ease-in-out;
     background-color: #00000000;
     color: #333333;
+    min-width: max-content;
+    max-width: max-content;
     border: none;
-    border-bottom: 2px solid #64317300;
-    padding: 1%;
+    border-bottom: 2px solid #64317380;
+    padding: 0 .5rem .1rem .5rem;
 }
 button:hover,button:focus{
-    outline: none;
     border-bottom: 2px solid #643173;
+    outline: none;
 }
 .menubar{
     font-size: clamp(80%,1.5vw,1.5vw);

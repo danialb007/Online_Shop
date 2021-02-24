@@ -52,12 +52,10 @@ def Profile(request):
 
 def Product(request,pk=None):
     user = utils.CurrentUser(request)
-    next_url = utils.Redirect(request)
     product = Products.objects.get(pk=pk)
     added = False
     if request.GET.get('product'):
-        utils.AddProduct(request)
-        return HttpResponseRedirect(next_url)
+        return utils.AddProduct(request)
     if ShoppingList.objects.filter(user=user):
         if product in ShoppingList.objects.get(user=user).product.all():
             added = True
@@ -71,7 +69,9 @@ def Product(request,pk=None):
 def Search(request):
     user = utils.CurrentUser(request)
     query = request.GET.get('q')
-    results = utils.Search(query)
+    results = utils.Search(query, request)
+    if request.POST:
+        results = utils.Search(query, request, filt=True)
     if not query:
         return HttpResponseRedirect('/')
     context = {
