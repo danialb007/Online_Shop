@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 class Products(models.Model):
     name = models.CharField(max_length=50)
@@ -24,3 +25,9 @@ class Ips(models.Model):
 class ShoppingList(models.Model):
     user = models.ForeignKey(Users, on_delete=models.CASCADE, default='')
     product = models.ManyToManyField(Products)
+
+class Reviews(models.Model):
+    user = models.ForeignKey(Users, on_delete=models.CASCADE)
+    product = models.ForeignKey(Products, on_delete=models.CASCADE)
+    review = models.CharField(max_length=300)
+    rating = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])

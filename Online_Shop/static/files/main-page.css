@@ -4,7 +4,7 @@
     margin: 1.5% auto;
     width: 95%;
     display: flex;
-    padding: 1.5% 0;
+    padding: 3vh 0;
     overflow: auto;
     justify-content: space-between;
 }

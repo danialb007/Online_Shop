@@ -26,9 +26,34 @@
                 <p>{{product.discription}}</p>
             </div>
         </div>
-    </div>
-    <div class="product-reviews-div">
-        <h5>Comments and reviews:</h5>
-        <p>No reviews</p>
+        {% if User %}
+            <div class="product-write-review-div">
+                <form method="POST">
+                    {% csrf_token %}
+                    <button type="submit" style="float: right;">Submit</button>
+                    <p style="float: left;margin-right: 2em;">Submit a review:</p>
+                    <input required type="radio" name="rating" value="1">
+                    <input type="radio" name="rating" value="2">
+                    <input type="radio" name="rating" value="3">
+                    <input type="radio" name="rating" value="4">
+                    <input type="radio" name="rating" value="5">
+                    <textarea required name="review"></textarea>
+                </form>
+            </div>
+        {% endif %}
+        <div class="product-reviews-div">
+            <h5>reviews:</h5>
+            {% if not reviews %}
+            <p>No reviews</p>
+            {% else %}
+            {% for review in reviews %}
+            <div class="each-review-div">
+                <h5 style="float: right;">Rating: {{review.rating}}</h5>
+                <h5>{{review.user.first_name}} :</h5>
+                <p>{{review.review}}</p>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
     </div>
 {% endblock %}

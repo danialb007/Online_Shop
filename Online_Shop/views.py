@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http.response import HttpResponse, HttpResponseRedirect
-from .models import Products, Users, Ips, ShoppingList
+from .models import Products, Users, Ips, ShoppingList, Reviews
 from . import utils
 
 def Login(request):
@@ -53,16 +53,20 @@ def Profile(request):
 def Product(request,pk=None):
     user = utils.CurrentUser(request)
     product = Products.objects.get(pk=pk)
+    reviews = Reviews.objects.filter(product=product)
     added = False
     if request.GET.get('product'):
         return utils.AddProduct(request)
     if ShoppingList.objects.filter(user=user):
         if product in ShoppingList.objects.get(user=user).product.all():
             added = True
+    if request.POST.get('review'):
+        utils.AddReview(request)
     context = {
         'User': user,
         'product':product,
         'added':added,
+        'reviews':reviews,
     }
     return render(request,'product.html', context)
 

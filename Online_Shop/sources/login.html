@@ -17,8 +17,10 @@
             {% if result %}
             <p>{{result}}</p>
             {% endif %}
-            <button type="submit">Login</button>
-            <a href="/signup"><button type="button">Sign up</button></a>
+            <div>
+                <button type="submit">Login</button>
+                <button type="button"><a href="/signup">Sign up</a></button>
+            </div>
         </form>
     </div>
 {% endblock %}

@@ -1,4 +1,4 @@
-from .models import Products, Users, Ips, ShoppingList
+from .models import Products, Users, Ips, ShoppingList, Reviews
 from hashlib import sha256
 from django.http.response import HttpResponseRedirect
 
@@ -128,3 +128,11 @@ def ChangeCount(request):
             counts.append(int(v))
     return counts
 
+def AddReview(request):
+    user = CurrentUser(request)
+    product = request.META['PATH_INFO'].split('/')[-1]
+    product = Products.objects.get(pk=product)
+    review = request.POST.get('review')
+    rating = request.POST.get('rating')
+    Reviews.objects.create(user=user, product=product, review=review, rating=rating)
+    return

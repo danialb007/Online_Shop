@@ -2,40 +2,25 @@
     margin: auto;
     width: 95%;
 }
+.product-page-div > * {
+    width: 100%;
+    margin: 1em auto;
+}
 .product-contents-div{
-    margin-bottom: 2%;
-    padding: 1%;
-    height: 500px;
+    padding: .5em;
     box-shadow: 0 0 3px 0.1px #643173;
     background-color: #fcfafa;
     min-width: 300px;
+    
 }
 .product-img-div{
     margin-right: auto;
-    margin-bottom: 2%;
     background-color: #000;
     color: #fcfafa;
     height: 400px;
 }
-.product-disc-div{
-    padding: 1%;
-    margin-top: 1%;
-    background-color: #643173;
-    color: #fcfafa;
-    max-height: 400px;
-    overflow: auto;
-    overflow-wrap: break-word;
-}
-.product-reviews-div{
-    margin: auto;
-    width: 95%;
-    margin-bottom: 1%;
-    padding: 1%;
-    background-color: #643173;
-    color: #fcfafa;
-    height: max-content;
-}
 .add-to-cart{
+    width: initial;
     float: right;
     height: 30px;
     font-weight: 600;
@@ -43,7 +28,50 @@
     text-align: right;
 }
 .add-to-cart p{
-    margin-top: 2%;
-    padding-right: 2%;
+    padding-right: .5em;
     color: #ff8080;
+}
+.product-disc-div{
+    padding: .5em;
+    background-color: #643173;
+    color: #fcfafa;
+    max-height: 400px;
+    overflow: auto;
+    overflow-wrap: break-word;
+}
+.product-write-review-div{
+    background-color: #fcfafa;
+    box-shadow: 0 0 3px 0.1px #643173;
+    padding: .5em;
+}
+.product-write-review-div textarea{
+    transition: all 0.1s ease-in-out;
+    width: 100%;
+    border: 2px solid #64317380;
+    padding: .5em;
+}
+.product-write-review-div textarea:hover, 
+.product-write-review-div textarea:focus {
+    border: 2px solid #643173;
+}
+.product-reviews-div{
+    padding: .5em;
+    background-color: #643173;
+    color: #fcfafa;
+    height: max-content;
+}
+.each-review-div{
+    border-top: 1px solid #fcfafa;
+}
+.each-review-div h5{
+    font-weight: 600;
+    margin: 0.25em 0;
+    margin-left: 1em;
+}
+.each-review-div p{
+    margin: 0.25em 0;
+    margin-left: 2em;
+}
+h5 + .each-review-div{
+    margin-top: 1em;
 }

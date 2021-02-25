@@ -2,17 +2,16 @@
     box-shadow: 0 0 3px 0.1px #643173;
     background-color: #fcfafa;
     margin: 1% auto;
-    width: 40%;
+    width: 80%;
     padding: 1%;
 }
 .login-div *{
+    font-size: clamp(90%,1.5vw,1.5vw);
     width: 100%;
 }
-.login-div button{
-    font-size: x-large;
-}
-a button{
-    float: right;
+.login-div div{
+    display: flex;
+    justify-content: space-between;
 }
 .login-div p{
     background-color: #ff808080;
