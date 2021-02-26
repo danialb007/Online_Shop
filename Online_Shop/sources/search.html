@@ -11,11 +11,22 @@
         {% else %}
         <div class="search-filter-div">
             <form method="POST" id="filter-form">{% csrf_token %}</form>
-            <p>Price: ascending <input name="price" form="filter-form" value="h" type="radio">
-            decending <input name="price" form="filter-form" value="l" type="radio"></p>
-            <p>Name: ascending <input name="name" form="filter-form" value="h" type="radio">
-            decending <input name="name" form="filter-form" value="l" type="radio"></p>
-            <button type="submit" form="filter-form">Apply changes</button>
+            <div style="display: flex;">
+                <p>Price:</p>
+                <select form="filter-form" name="price">
+                    <option value="h">ascending</option>
+                    <option value="l">decending</option>
+                </select>
+            </div>
+            <p style="visibility: hidden;">aaaa</p>
+            <div style="display: flex;">
+                <p>Name:</p>
+                <select form="filter-form" name="name">
+                    <option value="h">ascending</option>
+                    <option value="l">decending</option>
+                </select>
+            </div>
+            <button type="submit" form="filter-form">Apply</button>
         </div>
         <div class="search-div">
             {% for result in results %}

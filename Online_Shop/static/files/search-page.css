@@ -1,22 +1,27 @@
 .search-page-div{
-    display: flex;
     width: 95%;
     margin: auto;
 }
 .search-filter-div{
+    font-size: clamp(80%, 1.5vw, 1.5vw);
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
     background-color: #fcfafa;
-    width: 30%;
-    padding: 1%;
+    width: 100%;
+    padding: .5em;
     box-shadow: 0 0 3px 0.1px #643173;
-    display: table;
+}
+.search-filter-div select, .search-filter-div button{
+    margin-left: 1em;
+    height: min-content;
 }
 .search-div{
     margin-left: auto;
     background-color: #fcfafa;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    width: 68%;
+    justify-content: center;
     padding: 1%;
     min-height: 400px;
     box-shadow: 0 0 3px 0.1px #643173;
