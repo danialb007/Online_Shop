@@ -1,4 +1,5 @@
 {% extends 'Base.html' %}
+{% load Tags %}
 {% block style %}
     {% load static %}
     <link rel="stylesheet" href="{% static 'files/product-page.css' %}">
@@ -19,7 +20,7 @@
                 <br>
             </div>
             <h3>{{product.name}}</h3>
-            <h4>Price: {{product.price}}</h4>
+            <h4>Price: {{product.price|PriceFormat}}</h4>
             <div class="product-disc-div">
                 <h5>Discription:</h5>
                 <p>{{product.discription}}</p>

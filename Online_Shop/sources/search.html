@@ -1,4 +1,5 @@
 {% extends 'Base.html' %}
+{% load Tags %}
 {% block style %}
     {% load static %}
     <link rel="stylesheet" href="{% static 'files/search-page.css' %}">
@@ -33,7 +34,7 @@
             <div class="product">
                 <a href="/product/{{result.id}}"><p class="img">Product's image</p></a>
                 <a style="font-size: medium;" href="/product/{{result.id}}">{{result.name}}</a>
-                <p class="price">{{result.price}}</p>
+                <p class="price">{{result.price|PriceFormat}}</p>
             </div>
             {% endfor %}
         </div>

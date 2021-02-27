@@ -1,3 +1,4 @@
+import re
 from .models import Products, Users, Ips, ShoppingList, Reviews
 from hashlib import sha256
 from django.http.response import HttpResponseRedirect
