@@ -11,12 +11,11 @@
         </div>
         <div class="product-contents-div">
             <div class="add-to-cart">
-                <a href="?product={{product.pk}}">
-                    {% if added %}
-                </a><p class="add-to-cart">In cart</p>
-                    {% else %}
-                    <button>Add to cart</button></a>
-                    {% endif %}
+                {% if added %}
+                <p style="font-weight: 600;">In cart</p>
+                {% else %}
+                <a href="?product={{product.pk}}"><button>Add to cart</button></a>
+                {% endif %}
                 <br>
             </div>
             <h3>{{product.name}}</h3>
@@ -31,13 +30,15 @@
                 <form method="POST">
                     {% csrf_token %}
                     <button type="submit" style="float: right;">Submit</button>
-                    <p style="float: left;margin-right: 2em;">Submit a review:</p>
-                    <input required type="radio" name="rating" value="1">
-                    <input type="radio" name="rating" value="2">
-                    <input type="radio" name="rating" value="3">
-                    <input type="radio" name="rating" value="4">
-                    <input type="radio" name="rating" value="5">
-                    <textarea required name="review"></textarea>
+                    <p style="float: left;margin: 0;margin-right: 2em;">Submit a review:</p>
+                    <div class="rating-div">
+                        1 <input required type="radio" name="rating" value="1">
+                        <input type="radio" name="rating" value="2">
+                        <input type="radio" name="rating" value="3">
+                        <input type="radio" name="rating" value="4">
+                        <input type="radio" name="rating" value="5"> 5
+                        <textarea required name="review"></textarea>
+                    </div>
                 </form>
             </div>
         {% endif %}
@@ -48,8 +49,7 @@
             {% else %}
             {% for review in reviews %}
             <div class="each-review-div">
-                <h5 style="float: right;">Rating: {{review.rating}}</h5>
-                <h5>{{review.user.first_name}} :</h5>
+                <h5>{{review.user.first_name}} -> {{review.rating}}/5 :</h5>
                 <p>{{review.review}}</p>
             </div>
             {% endfor %}

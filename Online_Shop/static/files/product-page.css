@@ -6,12 +6,13 @@
     width: 100%;
     margin: 1em auto;
 }
+.product-page-div * {
+font-size: clamp(90%, 1.5vw, 1.5vw);
+}
 .product-contents-div{
     padding: .5em;
     box-shadow: 0 0 3px 0.1px #643173;
     background-color: #fcfafa;
-    min-width: 300px;
-    
 }
 .product-img-div{
     margin-right: auto;
@@ -19,13 +20,8 @@
     color: #fcfafa;
     height: 400px;
 }
-.add-to-cart{
-    width: initial;
+.add-to-cart *{
     float: right;
-    height: 30px;
-    font-weight: 600;
-    min-width: 115px;
-    text-align: right;
 }
 .add-to-cart p{
     padding-right: .5em;
@@ -46,6 +42,7 @@
 }
 .product-write-review-div textarea{
     transition: all 0.1s ease-in-out;
+    margin-top: .5em;
     width: 100%;
     border: 2px solid #64317380;
     padding: .5em;
@@ -61,6 +58,7 @@
     height: max-content;
 }
 .each-review-div{
+    margin-top: 1em;
     border-top: 1px solid #fcfafa;
 }
 .each-review-div h5{
@@ -72,6 +70,8 @@
     margin: 0.25em 0;
     margin-left: 2em;
 }
-h5 + .each-review-div{
-    margin-top: 1em;
+@media (max-width:350px){   
+    .rating-div{
+        clear: both;
+    }
 }
