@@ -9,9 +9,12 @@
 
 # Notes:
     I didn't include the settings.py file since nothing is really changed in there.
+    You can start a django project, copy the settigns.py and paste it in 
+    the directory of this project, and modify the backend db engine to your
+    liking
 
     I used postgresql database to handle the backend models but you can use other databases if you like,
     but make sure you configure your database settings in settings.py.
     
-    I also included a simple "sql_test_products.txt" file and you can
+    I also included a simple "sql_test_products.txt" file so you can
     copy paste it's lines into your sql based database to add some products.
