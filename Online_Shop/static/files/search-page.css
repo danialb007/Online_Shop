@@ -53,8 +53,7 @@
     font-size: large;
     margin: 1% 1%;
     text-align: center;
-    width: 20%;
-    min-width: 200px;
+    flex: 0 0 200px;
     height: 350px;
     position: relative;
 }

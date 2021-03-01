@@ -55,6 +55,8 @@ def Search(query, request, filt=False):
         for order in request.POST:
             if order == 'csrfmiddlewaretoken':
                 continue
+            if request.POST[order] == 'n':
+                continue
             result = result.order_by(order)
             if request.POST[order] == 'h':
                 result = result.reverse()
