@@ -1,0 +1,24 @@
+insert into "Online_Shop_products" (name,stock,price,featured,discription)
+values ('iphone 12 pro max', 15, 30000000, true, 'very luxury');
+insert into "Online_Shop_products" (name,stock,price,featured,discription)
+values ('iphone 12 pro', 15, 28000000, true, 'Sharp!!');
+insert into "Online_Shop_products" (name,stock,price,featured,discription)
+values ('iphone 11 pro max', 15, 20000000, true, 'even wider than ever');
+insert into "Online_Shop_products" (name,stock,price,featured,discription)
+values ('iphone 11 pro', 15, 18000000, true, 'wider screen');
+insert into "Online_Shop_products" (name,stock,price,featured,discription)
+values ('iphone 11', 15, 15000000, false, 'cool design');
+insert into "Online_Shop_products" (name,stock,price,featured,discription)
+values ('iphone x pro', 15, 16000000, false, 'dual sim');
+insert into "Online_Shop_products" (name,stock,price,featured,discription)
+values ('iphone x', 15, 14000000, false, 'first face id');
+insert into "Online_Shop_products" (name,stock,price,featured,discription)
+values ('iphone 8 plus', 15, 12000000, false, 'bigger screen');
+insert into "Online_Shop_products" (name,stock,price,featured,discription)
+values ('iphone 8', 15, 10000000, false, 'still fine');
+insert into "Online_Shop_products" (name,stock,price,featured,discription)
+values ('iphone 7 plus', 15, 800000, false, 'old');
+insert into "Online_Shop_products" (name,stock,price,featured,discription)
+values ('samsung galaxy s20 ultra', 15, 20000000, true, 'latest galaxy phone');
+insert into "Online_Shop_products" (name,stock,price,featured,discription)
+values ('samsung note 20', 15, 25000000, true, 'latest note 20!!!');
